@@ -1,0 +1,211 @@
+/**
+ * ============================================
+ * PROFILE & CERTIFICATE STYLES
+ * ============================================
+ */
+
+.profile-page {
+  padding: var(--space-xl);
+  max-width: 800px;
+  margin: 0 auto;
+  overflow-y: auto;
+  height: 100vh;
+}
+
+.profile-header {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xl);
+  padding: var(--space-xl);
+  background: var(--bg-card);
+  border: 1px solid var(--border-primary);
+  border-radius: var(--radius-lg);
+  margin-bottom: var(--space-lg);
+  animation: fadeInUp 0.4s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.profile-header::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--primary), var(--primary-light), var(--accent-orange));
+}
+
+.profile-info h2 {
+  font-size: var(--font-xl);
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+}
+
+.profile-info .email {
+  color: var(--text-muted);
+  font-size: var(--font-sm);
+  margin-top: 2px;
+}
+
+.profile-info .bio {
+  color: var(--text-secondary);
+  font-size: var(--font-sm);
+  margin-top: var(--space-sm);
+}
+
+.profile-stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-md);
+  margin-bottom: var(--space-lg);
+}
+
+.profile-stat-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-primary);
+  border-radius: var(--radius-md);
+  padding: var(--space-lg);
+  text-align: center;
+  transition: all var(--transition-normal);
+  animation: fadeInUp 0.4s ease;
+}
+
+.profile-stat-card:hover {
+  border-color: var(--border-accent);
+  transform: translateY(-2px);
+}
+
+.profile-stat-card .value {
+  font-size: var(--font-2xl);
+  font-weight: 800;
+  color: var(--primary-light);
+}
+
+.profile-stat-card .label {
+  font-size: var(--font-xs);
+  color: var(--text-muted);
+  margin-top: 4px;
+}
+
+.profile-stat-card .icon {
+  font-size: 1.5rem;
+  margin-bottom: var(--space-sm);
+  color: var(--primary);
+  opacity: 0.7;
+}
+
+.profile-section {
+  background: var(--bg-card);
+  border: 1px solid var(--border-primary);
+  border-radius: var(--radius-md);
+  padding: var(--space-lg);
+  margin-bottom: var(--space-lg);
+  animation: fadeInUp 0.5s ease;
+}
+
+.profile-section h3 {
+  font-size: var(--font-lg);
+  font-weight: 700;
+  margin-bottom: var(--space-md);
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+}
+
+/* ========== Certificate List ========== */
+.certificate-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.certificate-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-md);
+  background: var(--bg-tertiary);
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border-primary);
+  transition: all var(--transition-fast);
+}
+
+.certificate-item:hover {
+  border-color: var(--border-accent);
+}
+
+.certificate-info {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+}
+
+.certificate-icon {
+  width: 42px;
+  height: 42px;
+  border-radius: var(--radius-sm);
+  background: var(--primary-subtle);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  color: var(--primary-light);
+}
+
+.certificate-details h5 {
+  font-size: var(--font-sm);
+  font-weight: 600;
+}
+
+.certificate-details p {
+  font-size: var(--font-xs);
+  color: var(--text-muted);
+}
+
+/* ========== Upload Area ========== */
+.upload-area {
+  border: 2px dashed var(--border-light);
+  border-radius: var(--radius-md);
+  padding: var(--space-xl);
+  text-align: center;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  margin-top: var(--space-md);
+}
+
+.upload-area:hover {
+  border-color: var(--primary);
+  background: var(--primary-subtle);
+}
+
+.upload-area .icon {
+  font-size: 2rem;
+  color: var(--text-muted);
+  margin-bottom: var(--space-sm);
+}
+
+.upload-area p {
+  font-size: var(--font-sm);
+  color: var(--text-muted);
+}
+
+/* ========== Edit Profile Form ========== */
+.edit-profile-form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+@media (max-width: 768px) {
+  .profile-header {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .profile-stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
