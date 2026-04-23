@@ -1,0 +1,175 @@
+/**
+ * ============================================
+ * COMMUNITY STYLES
+ * Group cards, search, create modal
+ * ============================================
+ */
+
+/* ========== Explore Communities Page ========== */
+.explore-communities {
+  padding: var(--space-lg);
+}
+
+.explore-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--space-lg);
+}
+
+.explore-header h2 {
+  font-size: var(--font-xl);
+  font-weight: 700;
+}
+
+.communities-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: var(--space-md);
+}
+
+/* ========== Group Card (Explore View) ========== */
+.community-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-primary);
+  border-radius: var(--radius-md);
+  padding: var(--space-lg);
+  transition: all var(--transition-normal);
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+
+.community-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--primary), var(--primary-light));
+  opacity: 0;
+  transition: opacity var(--transition-fast);
+}
+
+.community-card:hover {
+  border-color: var(--border-accent);
+  box-shadow: var(--shadow-md);
+  transform: translateY(-2px);
+}
+
+.community-card:hover::before {
+  opacity: 1;
+}
+
+.community-card-header {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  margin-bottom: var(--space-md);
+}
+
+.community-card-header h3 {
+  font-size: var(--font-md);
+  font-weight: 700;
+}
+
+.community-card-header p {
+  font-size: var(--font-xs);
+  color: var(--text-muted);
+}
+
+.community-card-desc {
+  font-size: var(--font-sm);
+  color: var(--text-secondary);
+  line-height: 1.5;
+  margin-bottom: var(--space-md);
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.community-card-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.community-card-meta {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  font-size: var(--font-xs);
+  color: var(--text-muted);
+}
+
+.community-card-meta span {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.community-tags {
+  display: flex;
+  gap: var(--space-xs);
+  flex-wrap: wrap;
+  margin-bottom: var(--space-md);
+}
+
+.community-tag {
+  padding: 2px 8px;
+  border-radius: 12px;
+  font-size: 10px;
+  font-weight: 600;
+  background: var(--accent-blue-subtle);
+  color: var(--accent-blue);
+  border: 1px solid rgba(33, 150, 243, 0.2);
+}
+
+/* ========== Create Group Modal ========== */
+.create-group-form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.tags-input {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-xs);
+  padding: 8px;
+  background: var(--bg-input);
+  border: 1px solid var(--border-primary);
+  border-radius: var(--radius-sm);
+  min-height: 44px;
+  align-items: center;
+}
+
+.tags-input input {
+  flex: 1;
+  min-width: 100px;
+  padding: 4px 8px;
+}
+
+.tag-chip {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 3px 10px;
+  background: var(--primary-subtle);
+  color: var(--primary-light);
+  border-radius: 12px;
+  font-size: var(--font-xs);
+  font-weight: 600;
+}
+
+.tag-chip button {
+  font-size: 14px;
+  line-height: 1;
+  opacity: 0.7;
+}
+
+.tag-chip button:hover {
+  opacity: 1;
+}
