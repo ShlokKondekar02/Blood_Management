@@ -27,7 +27,8 @@ export const SocketProvider = ({ children }) => {
 
     // Connect to Socket.IO server
     const token = localStorage.getItem('token');
-    const newSocket = io('http://localhost:5000', {
+    const socketUrl = import.meta.env.VITE_SOCKET_URL || 'http://localhost:5000';
+    const newSocket = io(socketUrl, {
       auth: { token },
       transports: ['websocket', 'polling']
     });
