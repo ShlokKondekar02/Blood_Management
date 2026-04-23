@@ -18,7 +18,7 @@ const server = http.createServer(app);
 // Socket.io setup
 const io = new Server(server, {
   cors: {
-    origin: process.env.CLIENT_URL || 'http://localhost:5173',
+    origin: ['http://localhost:5173', 'https://bloodmanagement1.netlify.app', process.env.CLIENT_URL].filter(Boolean),
     credentials: true
   }
 });
@@ -34,6 +34,7 @@ const allowedOrigins = [
   'http://localhost:5173',
   'http://localhost:5174',
   'http://localhost:5175',
+  'https://bloodmanagement1.netlify.app',
   process.env.CLIENT_URL
 ].filter(Boolean);
 
